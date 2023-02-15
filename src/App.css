@@ -1,0 +1,7 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f3f5f8;
+  text-align: center;
+}

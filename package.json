@@ -1,0 +1,137 @@
+{
+  "name": "anf-webapp",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "test:unit": "cross-env CI=true react-app-rewired test",
+    "check:circular-deps": "madge --warning --circular --extensions ts,tsx src",
+    "dump:deps": "madge --json --include-npm src/index.tsx > deps.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "mobx-devtools": "node .scripts/mobx-devtools"
+  },
+  "dependencies": {
+    "@axe-core/react": "^4.4.3",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@storybook/addon-a11y": "^6.5.6",
+    "@storybook/addon-actions": "^6.5.6",
+    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-interactions": "^6.5.6",
+    "@storybook/addon-links": "^6.5.6",
+    "@storybook/addon-viewport": "^6.5.6",
+    "@storybook/builder-webpack5": "^6.5.6",
+    "@storybook/manager-webpack5": "^6.5.6",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "^6.5.6",
+    "@storybook/testing-library": "^0.0.11",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^14.2.0",
+    "@types/enzyme": "^3.10.12",
+    "@types/jest": "^27.5.2",
+    "@types/jest-axe": "^3.5.3",
+    "@types/node": "^16.11.39",
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.17",
+    "@types/react-modal": "^3.13.1",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux-mock-store": "^1.0.3",
+    "@types/simplemde": "^1.11.8",
+    "@types/styled-components": "^5.1.25",
+    "@types/uuid": "^8.3.4",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "@xstate/inspect": "^0.7.0",
+    "@xstate/react": "^3.0.0",
+    "@xstate/test": "^0.5.1",
+    "axe-core": "^4.4.2",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "fetch-mock": "^9.11.0",
+    "flush-promises": "^1.0.2",
+    "highlight.js": "^10.7.3",
+    "husky": "^4.3.8",
+    "immer": "^9.0.14",
+    "isomorphic-fetch": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-axe": "^6.0.0",
+    "jest-styled-components": "^7.0.8",
+    "madge": "^5.0.1",
+    "mobx": "~6.6.0",
+    "mobx-react-lite": "^3.4.0",
+    "msw": "~0.39.2",
+    "msw-storybook-addon": "^1.6.3",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "polished": "^4.2.2",
+    "prettier": "^2.6.2",
+    "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
+    "react-dom": "^17.0.2",
+    "react-markdown": "^8.0.3",
+    "react-modal": "^3.15.1",
+    "react-query": "^3.39.1",
+    "react-redux": "^8.0.2",
+    "react-router": "6.3.0",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.4.1",
+    "rxjs": "^7.5.5",
+    "rxjs-spy": "^8.0.2",
+    "simplemde": "^1.11.2",
+    "socket.io-client": "^4.4.1",
+    "styled-components": "^5.3.5",
+    "ts-jest": "^27.1.5",
+    "typescript": "~4.6.4",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "xstate": "^4.32.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "modulePathIgnorePatterns": [
+      "m2/setup"
+    ]
+  },
+  "madge": {
+    "tsConfig": "tsconfig.json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
+}
