@@ -7,17 +7,17 @@
 function createProxyConfig() {
   return [
     {
-      path: '/api',
-      target: 'http://localhost:3000',
-      pathRewrite: { '^/api': '' },
+      path: "/api",
+      target: "http://localhost:3010",
+      pathRewrite: { "^/api": "" },
       secure: false,
       changeOrigin: true,
       proxyTimeout: 1000 * 60 * 5, // response timeout
       timeout: 1000 * 60 * 5, // request timeout
-    }
+    },
   ];
 }
 
 module.exports = {
-  createProxyConfig
-}
+  createProxyConfig,
+};
